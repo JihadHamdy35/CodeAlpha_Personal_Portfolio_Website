@@ -1,28 +1,18 @@
-// Some Checks
-// list and width
-let listDiv = document.getElementsByClassName("list-div")[0];
+//Header Functions 
 let header = document.getElementsByTagName("header")[0];
 let headerImages = header.getElementsByClassName("container")[0].getElementsByTagName("img");
-function linksHover(){
-    let headerLinks = header.getElementsByClassName("container")[0].getElementsByTagName("a");
-    for(let i=0 ; i<headerLinks.length ; i++){
-        headerLinks[i].onmouseenter = function(){
-            headerImages[i].src=`./assets/img/B-link${i+1}.png`;
-        }
-        headerLinks[i].onmouseleave = function(){
-            headerImages[i].src=`./assets/img/W-link${i+1}.png`;
-        }
+let listDiv = document.getElementsByClassName("list-div")[0];
+function headerBG(){
+    if (window.scrollY>=16){
+        header.style.backgroundColor = "black";
+        header.style.top = "0";
+    }
+    else {
+        header.style.backgroundColor = "transparent";
+        header.style.top = "1em";
     }
 }
-linksHover();
-function menuBarCreation(){
-    if(listDiv.getElementsByTagName("img")[0]!=null) return;
-    let listImg = document.createElement("img");
-    listImg.setAttribute("class" , "listImg");
-    listImg.setAttribute("src" , "./assets/img/menu-bar.png");
-    listImg.setAttribute("alt" , "menu-bar");
-    listDiv.appendChild(listImg);
-}
+//      List 
 function listDisplay(value){
     let listImg = listDiv.getElementsByTagName("img")[0];
     if(value>767 && listImg!=null){
@@ -49,19 +39,37 @@ function listDisplay(value){
         }
     }
 };
-function headerBG(){
-    if (window.scrollY>=16){
-        header.style.backgroundColor = "black";
-    }
-    else {
-        header.style.backgroundColor = "transparent";
+function menuBarCreation(){
+    if(listDiv.getElementsByTagName("img")[0]!=null) return;
+    let listImg = document.createElement("img");
+    listImg.setAttribute("class" , "listImg");
+    listImg.setAttribute("src" , "./assets/img/menu-bar.png");
+    listImg.setAttribute("alt" , "menu-bar");
+    listDiv.appendChild(listImg);
+}
+//      Links
+function linksHover(){
+    let headerLinks = header.getElementsByClassName("container")[0].getElementsByTagName("a");
+    for(let i=0 ; i<headerLinks.length ; i++){
+        headerLinks[i].onmouseenter = function(){
+            headerImages[i].src=`./assets/img/B-link${i+1}.png`;
+        }
+        headerLinks[i].onmouseleave = function(){
+            headerImages[i].src=`./assets/img/W-link${i+1}.png`;
+        }
     }
 }
+// Home Page Functions
+
+// Functions to achieve onload
 window.onload = function(){
     listDisplay(innerWidth);
     headerBG();
+    linksHover();
 }
+// Functions to achieve onresize
 window.onresize= function(){
     listDisplay(innerWidth);
 }
+// Functions to achieve onscroll
 window.onscroll = ()=> headerBG();
