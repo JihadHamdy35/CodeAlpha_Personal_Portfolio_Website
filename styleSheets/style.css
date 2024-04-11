@@ -1,3 +1,11 @@
+@keyframes up-down {
+  from {
+    margin-top: 1.5em;
+  }
+  to {
+    margin-top: -1.5em;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -160,7 +168,8 @@ section#home div.left-side div.container-1 {
   height: -moz-fit-content;
   height: fit-content;
   border: 0.8px solid rgb(219, 219, 219);
-  padding: 0.6em 1em;
+  padding: 0.5em 1em;
+  letter-spacing: 0.5px;
   background-image: linear-gradient(to right, rgba(117, 30, 134, 0.4), rgba(153, 0, 255, 0.4));
   font-size: 1.3em;
   font-weight: bold;
@@ -176,6 +185,7 @@ section#home div.left-side span.animated-text {
   font-weight: 900;
 }
 section#home div.left-side p {
+  width: 80%;
   font-size: 0.9em;
   font-weight: 100;
   color: rgb(146, 146, 146);
@@ -204,13 +214,31 @@ section#home div.left-side div.container-2 img {
   width: 1.5em;
   margin-left: 1em;
 }
+section#home div.left-side div.container-2:hover img {
+  margin-left: 1.5em;
+  transition: margin-left 0.3s;
+}
+section#home div.right-side {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+section#home div.right-side img {
+  width: 90%;
+  animation: up-down 1.2s infinite alternate-reverse;
+}
 
 @media screen and (min-width: 768px) {
   header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 3%;
+    padding: 0 7%;
     height: 4em;
   }
   header .upperDiv .name h1 {
@@ -239,6 +267,28 @@ section#home div.left-side div.container-2 img {
   header .listItems button {
     margin: 0;
   }
+  section#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7%;
+    padding-top: 15em;
+  }
+  section#home div.left-side {
+    width: 50%;
+  }
+  section#home div.left-side span.animated-text {
+    font-size: 3em;
+  }
+  section#home div.left-side div.container-2 {
+    margin-top: 3em;
+  }
+  section#home div.right-side {
+    width: 50%;
+  }
+  section#home div.right-side img {
+    width: 75%;
+  }
 }
 @media screen and (min-width: 1024px) {
   header {
@@ -254,5 +304,18 @@ section#home div.left-side div.container-2 img {
   header .listItems button {
     margin: 0;
     width: 11.8em;
+  }
+  section#home {
+    padding-left: 8%;
+    padding-top: 10em;
+  }
+  section#home div.left-side span.animated-text {
+    font-size: 3.5em;
+  }
+  section#home div.left-side div.container-2 {
+    margin-top: 5em;
+  }
+  section#home div.right-side img {
+    width: 70%;
   }
 }/*# sourceMappingURL=style.css.map */
