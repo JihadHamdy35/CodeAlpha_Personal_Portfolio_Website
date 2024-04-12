@@ -191,7 +191,7 @@ section#home div.left-side span.text-container {
   margin-top: 2em;
 }
 section#home div.left-side span.text-container .animated-text {
-  font-size: 2.8em;
+  font-size: 2.6em;
   font-weight: 900;
 }
 section#home div.left-side span.text-container span.dash {
@@ -253,7 +253,7 @@ section#home div.right-side img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 7%;
+    padding: 0 6%;
     height: 4em;
   }
   header .upperDiv .name h1 {
@@ -292,8 +292,14 @@ section#home div.right-side img {
   section#home div.left-side {
     width: 50%;
   }
-  section#home div.left-side span.animated-text {
-    font-size: 3em;
+  section#home div.left-side span.text-container {
+    margin-top: 1em;
+  }
+  section#home div.left-side span.text-container .animated-text {
+    font-size: 2.7em;
+  }
+  section#home div.left-side span.text-container span.dash {
+    font-size: 4em;
   }
   section#home div.left-side div.container-2 {
     margin-top: 3em;
@@ -325,15 +331,28 @@ section#home div.right-side img {
   }
   section#home {
     padding-left: 8%;
-    padding-top: 10em;
+    padding-top: 15em;
   }
-  section#home div.left-side span.animated-text {
-    font-size: 3.5em;
+  section#home div.left-side {
+    width: 60%;
+  }
+  section#home div.left-side span.text-container {
+    margin-top: 0em;
+  }
+  section#home div.left-side span.text-container .animated-text {
+    font-size: 4.5em;
+  }
+  section#home div.left-side span.text-container span.dash {
+    font-size: 4em;
   }
   section#home div.left-side div.container-2 {
     margin-top: 5em;
   }
+  section#home div.right-side {
+    width: 40%;
+    left: 60%;
+  }
   section#home div.right-side img {
-    width: 70%;
+    width: 80%;
   }
 }/*# sourceMappingURL=style.css.map */

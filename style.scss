@@ -218,7 +218,7 @@ section#home {
             display: block;
             margin-top: 2em;
             .animated-text {
-                font-size: 2.8em;
+                font-size: 2.6em;
                 font-weight: 900;
             }
             span.dash {
@@ -292,13 +292,11 @@ section#home {
 @media screen and (min-width: 768px) {
     header {
         @include flex(space-between);
-        padding: 0 7%;
+        padding: 0 6%;
         height: 4em;
-
         .upperDiv .name h1 {
             font-size: 1.3em;
         }
-
         .listItems {
             width: 70%;
             display: flex;
@@ -327,7 +325,6 @@ section#home {
             }
         }
     }
-
     section#home {
         @include flex(space-between);
         padding-left: 7%;
@@ -336,8 +333,14 @@ section#home {
         div.left-side {
             width: 50%;
 
-            span.animated-text {
-                font-size: 3em;
+            span.text-container {
+                margin-top: 1em;
+                .animated-text {
+                    font-size: 2.7em;
+                }
+                span.dash {
+                    font-size: 4em;
+                }
             }
 
             div.container-2 {
@@ -350,7 +353,6 @@ section#home {
             position: absolute;
             left: 50%;
             z-index: -1;
-
             img {
                 width: 75%;
             }
@@ -379,21 +381,29 @@ section#home {
 
     section#home {
         padding-left: 8%;
-        padding-top: 10em;
+        padding-top: 15em;
 
         div.left-side {
-            span.animated-text {
-                font-size: 3.5em;
+            width: 60%;
+            span.text-container {
+                margin-top: 0em;
+                .animated-text {
+                    font-size: 4.5em;
+                }
+                span.dash {
+                    font-size: 4em;
+                }
             }
-
             div.container-2 {
                 margin-top: 5em;
             }
         }
 
         div.right-side {
+            width: 40%;
+            left: 60%;
             img {
-                width: 70%;
+                width: 80%;
             }
         }
     }
