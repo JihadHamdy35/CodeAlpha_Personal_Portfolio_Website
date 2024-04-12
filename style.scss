@@ -10,6 +10,16 @@
     }
 }
 
+@keyframes appearence {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -172,6 +182,7 @@ header {
 section#home {
     width: 100%;
     height: fit-content;
+
     padding : {
         top: 15em;
         left: 6%;
@@ -201,17 +212,25 @@ section#home {
             }
         }
 
-        span.animated-text {
+        span.text-container {
             width: fit-content;
             height: fit-content;
             display: block;
-            margin-top: 0.3em;
-            font-size: 2.8em;
-            font-weight: 900;
+            margin-top: 2em;
+            .animated-text {
+                font-size: 2.8em;
+                font-weight: 900;
+            }
+            span.dash {
+                font-size: 4em;
+                font-weight: 900;
+                animation: appearence 0.5s infinite alternate-reverse;
+            }
         }
 
         p {
             width: 80%;
+
             font: {
                 size: 0.9em;
                 weight: 100;
@@ -257,6 +276,7 @@ section#home {
         width: 100%;
         height: fit-content;
         @include flex(center);
+
         padding: {
             top: 1em;
             bottom: 1em;
@@ -264,7 +284,7 @@ section#home {
 
         img {
             width: 90%;
-            animation: up-down 1.2s  infinite alternate-reverse;
+            animation: up-down 1.2s infinite alternate-reverse;
         }
     }
 }
@@ -274,9 +294,11 @@ section#home {
         @include flex(space-between);
         padding: 0 7%;
         height: 4em;
+
         .upperDiv .name h1 {
             font-size: 1.3em;
         }
+
         .listItems {
             width: 70%;
             display: flex;
@@ -305,22 +327,31 @@ section#home {
             }
         }
     }
+
     section#home {
         @include flex(space-between);
         padding-left: 7%;
         padding-top: 15em;
-        div.left-side{
+
+        div.left-side {
             width: 50%;
+
             span.animated-text {
                 font-size: 3em;
             }
+
             div.container-2 {
                 margin-top: 3em;
             }
         }
+
         div.right-side {
             width: 50%;
-            img{
+            position: absolute;
+            left: 50%;
+            z-index: -1;
+
+            img {
                 width: 75%;
             }
         }
@@ -345,19 +376,23 @@ section#home {
             }
         }
     }
+
     section#home {
         padding-left: 8%;
         padding-top: 10em;
-        div.left-side{
+
+        div.left-side {
             span.animated-text {
                 font-size: 3.5em;
             }
+
             div.container-2 {
                 margin-top: 5em;
             }
         }
+
         div.right-side {
-            img{
+            img {
                 width: 70%;
             }
         }

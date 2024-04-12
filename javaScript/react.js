@@ -60,7 +60,33 @@ function linksHover(){
     }
 }
 // Home Page Functions
+let homePage = document.getElementById("home");
+let animatedText = homePage.getElementsByClassName("animated-text")[0];
+let textToWrite = "Front-End Developer";
+let index = 0;
 
+function typeText() {
+    if (index < textToWrite.length) {
+        animatedText.innerText += textToWrite[index];
+        index++;
+        setTimeout(typeText, 100); 
+    } else {
+        setTimeout(eraseText, 500); 
+    }
+}
+
+function eraseText() {
+    if (index > 0) {
+        const newText = animatedText.innerText.substring(0, animatedText.innerText.length-1);
+        animatedText.innerText = newText;
+        index--;
+        setTimeout(eraseText, 100); 
+    } else {
+        index = 0;
+        setTimeout(typeText, 500); 
+    }
+}
+typeText();
 // Functions to achieve onload
 window.onload = function(){
     listDisplay(innerWidth);
