@@ -19,6 +19,24 @@
         opacity: 0;
     }
 }
+@keyframes to-left {
+    from {
+        margin-left: 30em;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+@keyframes to-right {
+    from {
+        margin-left: -30em;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
 
 * {
     box-sizing: border-box;
@@ -164,7 +182,7 @@ header {
             display: block;
             margin-top: 1.3em;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: bold;
             background: linear-gradient(to left, rgba(0, 0, 0, 0) 50%, white 50%) right;
             background-size: 200%;
@@ -181,7 +199,7 @@ header {
 // Home page Style
 section#home {
     width: 100%;
-    height: fit-content;
+    height: 950px;
 
     padding : {
         top: 15em;
@@ -230,14 +248,7 @@ section#home {
 
         p {
             width: 80%;
-
-            font: {
-                size: 0.9em;
-                weight: 100;
-            }
-
-            color: rgb(146, 146, 146);
-            line-height: 1.5em;
+            @include paragraph;
             margin-top: 1em;
         }
 
@@ -288,7 +299,95 @@ section#home {
         }
     }
 }
-
+// Skills page Style
+section#skills{
+    width: 92%;
+    height: 950px;
+    margin-top: 17em;
+    @include marginAuto;
+    padding : {
+        top: 5em;
+    }
+    background-color: #151515;
+    border-top-right-radius: 4em;
+    border-top-left-radius: 4em;
+    h1{
+        width: fit-content;
+        @include marginAuto;
+        font: {
+            size: 3em;
+        }
+    }
+    p{
+        width: 90%;
+        margin-top: 1em;
+        @include marginAuto;
+        @include paragraph;
+    }
+    .outer-container{
+        width: 85%;
+        height: 300px;
+        margin-top: 3em;
+        @include marginAuto;
+        @include flex(space-around);
+        overflow-x: hidden;
+        .left-arrow , .right-arrow{
+            width: 2.5em;
+            height: 2.5em;
+            border-radius: 50%;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            @include flex(space-around);
+            img{
+                width: 0.8em;
+            }
+            cursor: pointer;
+        }
+        .left-arrow img{
+            margin-left: -3px;
+        }
+        .right-arrow img{
+            margin-left: 3px;
+        }
+        .inner-container{
+            width: 80%;
+            height: 90%;
+            overflow-x: hidden;
+            @include flex(space-around);
+            .small-container{
+                animation: none;
+                width: 90%;
+                height: fit-content;
+                text-align: center;
+                margin-left: 0em;
+                transition: margin-left 0.6s , display 0.3s;
+                div{
+                    width: 10em;
+                    height: 10em;
+                    border-radius: 50%;
+                    background-image: url('../assets/img/percentage.png');
+                    background-size: contain;
+                    @include marginAuto;
+                    @include flex(space-around);
+                    text-align: center;
+                    h1{
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+                }
+                h3{
+                    margin-top: 1em;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                }
+            }
+            .none{
+                display: none;
+                width: 90%;
+                transition: margin-left 0.6s , display 0.3s;
+            }
+        }
+    }
+}
 @media screen and (min-width: 768px) {
     header {
         @include flex(space-between);
@@ -326,6 +425,7 @@ section#home {
         }
     }
     section#home {
+        height: 716px;
         @include flex(space-between);
         padding-left: 7%;
         padding-top: 15em;
@@ -380,6 +480,7 @@ section#home {
     }
 
     section#home {
+        height: 716px;
         padding-left: 8%;
         padding-top: 15em;
 
